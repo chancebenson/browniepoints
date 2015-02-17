@@ -90,29 +90,24 @@ input[type=password]:focus
   });
   </script>
 </head>
-<body>
+<body id="body-color">
  <b>'.$message.'</b>
-<div id="tabs" style="width: 480px;">
-	<ul>
-    	<li><a href="#tabs-1">Login</a></li>
-    	<li><a href="#tabs-2" class="active">SignUp</a></li>
-    </ul>
-	<div id="tabs-1">
-		<form action="" method="post">
-			<p><input id="email" type="text" placeholder="Your Email"></p>
-			<p><input id="password" type="password" placeholder="Your Pass">
-			<input name="action" type="hidden" value="Login" /></p>
-			<p><input type="submit" value="Enter if you dare" /></p>
-		</form>
+<div id="tabs">
+		<fieldset style="width:30%"><legend>LOGIN HERE</legend>
+			<form method="POST" action="">
+				USER: <br><input type="text" name="user" size="40"><br>
+				PASS: <br><input type="password" name="pass" size="40"><br>
+				<input id="button" type="submit" name="submit" value="ENTER AT YOUR OWN RISK">
+			</form>
+		</fieldset>
+		<fieldset style="width:30%"><legend>SignUp</legend>
+			<form method="POST" action="">
+				Name: <br><input type="text" name="user" size="50"><br>
+				Email: <br><input type="text" name="email" size="40"><br>
+				Pass: <br><input type="password" name="password" size="40"><br>
+				<input id="button" type="submit" name="submit" value="SignUp">
+			</form>
+		</fieldset>
 	</div>
-	<div id="tabs-2">
-		<form action="" method="post">
-			<p><input id="name" name="name" type="text" placeholder="Your Name"></p>
-    		<p><input id="email" name="email" type="text" placeholder="Your Email"></p>
-    		<p><input id="password" name="password" type="password" placeholder="Your Pass">
-    		<input name="action" type="hidden" value="signup" /></p>
-    		<p><input type="submit" value="Signup" /></p>
-		</form>
-	</div>
-</div>';
+</body>';
 ?>
