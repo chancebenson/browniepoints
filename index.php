@@ -12,7 +12,6 @@ session_start();
 include('conn.php');
 if(isset($_POST['action']))
 {
-	echo "<pre>"; print_r($_POST); die("<pre>");
 	if ($_POST['action']=="login") {
 		$email = mysqli_real_escape_string($connection,$_POST['email']);
 		$password = mysqli_real_escape_string($connection,$_POST['password']);
