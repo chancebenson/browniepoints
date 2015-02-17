@@ -1,4 +1,11 @@
 <?php
+/*
+WHMCS Brownie Points
+Created: Jan 26 2015
+By: Chance Benson
+Version 1.0.0
+*/
+
 include('conn.php');
 if(isset($_POST['action']))
 {
@@ -38,6 +45,27 @@ if(isset($_POST['action']))
 		}
 	}
 }
+
+// Lets say hello to our users
+
+$time=date('H');
+
+function sayhello($time)
+{
+	if ($time<12) {
+		return "Good morning!";
+	}
+	elseif ($time<18) {
+		return "Good afternoon!";
+	}
+	else {
+		return "Good evening!";
+	}
+}
+
+$greeting = sayhello($time);
+
+echo "$greeting How are you?";
 
 echo '<script type="text/javascript" src="jquery-1.8.0.min.js"></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
