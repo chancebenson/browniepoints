@@ -68,7 +68,7 @@ function sayhello($time)
 
 $greeting = sayhello($time);
 
-if (match_found_in_database()) {
+if ($results()) {
 	$_SESSION['loggedin'] = true;
 	$_SESSION['username'] = $username;
 }
