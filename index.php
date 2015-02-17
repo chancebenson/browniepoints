@@ -131,7 +131,7 @@ input[type=password]:focus
     	<li><a href="#tabs-2" class="active">SignUp</a></li>
     </ul>
 	<div id="tabs-1">
-		<form action="login" method="post">
+		<form action="" method="post">
 			<p><input id="email" type="text" placeholder="Your Email"></p>
 			<p><input id="password" type="password" placeholder="Your Pass">
 			<input name="action" type="hidden" value="Login" /></p>
@@ -139,7 +139,7 @@ input[type=password]:focus
 		</form>
 	</div>
 	<div id="tabs-2">
-		<form action="signup" method="post">
+		<form action="" method="post">
 			<p><input id="name" name="name" type="text" placeholder="Your Name"></p>
     		<p><input id="email" name="email" type="text" placeholder="Your Email"></p>
     		<p><input id="password" name="password" type="password" placeholder="Your Pass">
