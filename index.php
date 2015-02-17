@@ -68,7 +68,7 @@ function sayhello($time)
 
 $greeting = sayhello($time);
 
-echo "$greeting $username, How are you?";
+echo "$greeting How are you?";
 
 echo '<script type="text/javascript" src="jquery-1.8.0.min.js"></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
