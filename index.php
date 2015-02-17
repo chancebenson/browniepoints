@@ -49,6 +49,8 @@ if(isset($_POST['action']))
 	}
 }
 
+header('Location: https://whmcstest.biz/browniepoints/members.php');
+
 // Lets say hello to our users
 
 $time=date('H');
