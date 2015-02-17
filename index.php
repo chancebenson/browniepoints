@@ -21,6 +21,7 @@ if(isset($_POST['action']))
 		{
 			$message = $results['name']." Login Success!!";
 			header('Location: https://whmcstest.biz/browniepoints/members.php');
+			die($message);
 		}
 		else
 		{
@@ -47,6 +48,7 @@ if(isset($_POST['action']))
 			mysqli_query("insert into users(name,email,password) values('".$name."','".$email."','".md5($password)."')");
 			$message = "You did it correctly!";
 			header('Location: https://whmcstest.biz/browniepoints/members.php');
+			die($message);
 		}
 	}
 }
