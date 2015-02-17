@@ -32,8 +32,10 @@ $from = "select name from users;";
 $result = mysqli_query($from) or die(mysqli_error());
 
 echo '
+<html>
 <head>
  <h1>Add points to the user who deserves them</h1>
+</head>
 <body>
  <b>'.$message.'</b>
 <div id="points" style="width: 480px;">
@@ -51,5 +53,7 @@ echo '
 			<option value="$for">
 		</select>
 	</form>
-</div>';
+</div>
+</body>
+</html>';
 ?>	
