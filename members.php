@@ -28,8 +28,6 @@ if (isset($_POST['action']))
 		}
 	}
 }
-$from = "select name from users;";
-$result = mysqli_query($from) or die(mysqli_error());
 
 echo '
 <html>
@@ -42,8 +40,11 @@ echo '
 	<form action="" method="post">
 		<select name="name">;
 			<?php
-			while ($whom = mysqli_fetch_assoc($result)) {
-				echo '<option value=\"'.$whom['name'].'">.'.$whom['name'].'</option>';
+			include('conn.php');
+			$from = "select name from users;";
+			$result = mysqli_query($from) or die(mysqli_error());
+			while ($whom = mysqli_fetch_array($result)) {
+				echo '<option value=\"'.$whom[0].'">'.$whom[0].'</option>';
 			}
 			echo "</select>";
 			?>
@@ -52,6 +53,7 @@ echo '
 			<option value="none" selected>--Select who its for--</option>
 			<option value="$for">
 		</select>
+	<input type="submit" value="Add the points">
 	</form>
 </div>
 </body>
