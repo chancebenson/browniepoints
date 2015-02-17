@@ -17,6 +17,7 @@ if (isset($_POST['action']))
 		$insert = mysqli_fetch_array($for);
 		if (count($insert)>=1) 
 		{
+			mysqli_query("insert into points(name,points,whom) values('".$for."','".$points."','".$whom."')");
 			$message = $insert['points']." have been added to $user";
 			die($message);
 		}
@@ -27,3 +28,23 @@ if (isset($_POST['action']))
 		}
 	}
 }
+
+echo '
+<head>
+ <h1>Add points to the user who deserves them</h1>
+<body>
+ <b>'.$message.'</b>
+<div id="points" style="width: 480px;">
+	<form action="" method="post">
+		<select id="name" name="name">
+			<option value="none" selected>--Select your name--</option>
+			<option value="$user">
+		</select>
+	<input type="text" name="points" value="How many points to give">
+		<select id="for" name="for">
+			<option value="none" selected>--Select who its for--</option>
+			<option value="$for">
+		</select>
+	</form>
+</div>';
+?>	
