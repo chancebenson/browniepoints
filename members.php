@@ -29,6 +29,8 @@ if (isset($_POST['action']))
 	}
 }
 
+$query = mysqli_query("select name from users");
+
 echo '
 <html>
 <head>
@@ -38,16 +40,10 @@ echo '
  <b>'.$message.'</b>
 <div id="points" style="width: 480px;">
 	<form action="" method="post">
-		<select name="name">;
-			<?php
-			include('conn.php');
-			$from = "select name from users;";
-			$result = mysqli_query($from) or die(mysqli_error());
-			while ($whom = mysqli_fetch_array($result)) {
-				echo '<option value=\"'.$whom[0].'">'.$whom[0].'</option>';
-			}
-			echo "</select>";
-			?>
+		<select name="name">
+			<?php while ($option = $query->fetch_object()) { ?>
+				<option><?php echo $option->name; ?></option>
+			<?php } ?>
 	<input type="text" name="points" value="How many points to give">
 		<select id="for" name="for">
 			<option value="none" selected>--Select who its for--</option>
