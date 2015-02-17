@@ -12,6 +12,7 @@ session_start();
 include('conn.php');
 if(isset($_POST['action']))
 {
+	echo "<pre>"; print_r($_POST); die("<pre>");
 	if ($_POST['action']=="login") {
 		$email = mysqli_real_escape_string($connection,$_POST['email']);
 		$password = mysqli_real_escape_string($connection,$_POST['password']);
@@ -136,7 +137,7 @@ input[type=password]:focus
 		<form action="" method="post">
 			<p><input id="email" type="text" placeholder="Your Email"></p>
 			<p><input id="password" type="password" placeholder="Your Pass">
-			<input name="action" type="hidden" value="Login" /></p>
+			<input name="action" type="hidden" value="login" /></p>
 			<p><input type="submit" value="Enter if you dare" /></p>
 		</form>
 	</div>
