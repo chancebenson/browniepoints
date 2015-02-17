@@ -6,6 +6,9 @@ By: Chance Benson
 Version 1.0.0
 */
 
+//Start the session
+session_start();
+
 include('conn.php');
 if(isset($_POST['action']))
 {
@@ -65,7 +68,11 @@ function sayhello($time)
 
 $greeting = sayhello($time);
 
-echo "$greeting How are you?";
+if (match_found_in_database()) {
+	$_SESSION['loggedin'] = true;
+	$_SESSION['username'] = $username;
+}
+echo "$greeting $username, How are you?";
 
 echo '<script type="text/javascript" src="jquery-1.8.0.min.js"></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
