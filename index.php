@@ -68,10 +68,6 @@ function sayhello($time)
 
 $greeting = sayhello($time);
 
-if ($results()) {
-	$_SESSION['loggedin'] = true;
-	$_SESSION['username'] = $username;
-}
 echo "$greeting $username, How are you?";
 
 echo '<script type="text/javascript" src="jquery-1.8.0.min.js"></script>
